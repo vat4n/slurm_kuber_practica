@@ -6,7 +6,7 @@ metadata:
   name: my-ingress
 spec:
   rules:
-  - host: s<номер своего логина>.k8s.slurm.io
+  - host: s<номер своего логина>.edu.slurm.io
     http:
       paths:
       - backend:
