@@ -1,15 +1,14 @@
----
-# file: practice/1.kube-basics-lecture/8.ingress/ingress.yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: my-ingress
+  name: my-ingress-nginx
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-  - host: s<номер своего логина>.edu.slurm.io
+  - host: my.s<номер своего логина>.edu.slurm.io
     http:
       paths:
       - backend:
           serviceName: my-service
           servicePort: 80
-...
