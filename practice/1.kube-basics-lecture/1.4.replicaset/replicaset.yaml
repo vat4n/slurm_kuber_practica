@@ -1,19 +1,14 @@
 ---
-# file: practice/1.kube-basics-lecture/3.deployment/deployment.yaml
+# file: practice/1.kube-basics-lecture/1.4.replicaset/replicaset.yaml
 apiVersion: apps/v1
-kind: Deployment
+kind: ReplicaSet
 metadata:
-  name: my-deployment
+  name: my-replicaset
 spec:
   replicas: 2
   selector:
     matchLabels:
       app: my-app
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
-    type: RollingUpdate
   template:
     metadata:
       labels:
