@@ -1,4 +1,5 @@
-apiVersion: extensions/v1beta1
+---
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: my-ingress-nginx
@@ -9,6 +10,9 @@ spec:
   - host: my.s<номер своего логина>.edu.slurm.io
     http:
       paths:
-      - backend:
-          serviceName: my-service
-          servicePort: 80
+      - pathType: ImplementationSpecific
+        backend:
+          service:
+            name: my-service
+            port:
+              number: 80
