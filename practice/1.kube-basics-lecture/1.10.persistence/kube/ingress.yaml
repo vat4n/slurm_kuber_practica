@@ -6,11 +6,11 @@ metadata:
 spec:
   rules:
     - host: fileshare.s<номер своего логина>.edu.slurm.io
-    http:
-      paths:
-      - pathType: ImplementationSpecific
-        backend:
-          service:
-            name: fileshare
-            port:
-              number: 80
+      http:
+        paths:
+        - pathType: ImplementationSpecific
+          backend:
+            service:
+              name: fileshare
+              port:
+                number: 80
